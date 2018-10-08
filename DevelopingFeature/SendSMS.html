@@ -1,0 +1,130 @@
+<!--
+	作者：HUCharles@foxmail.com
+	时间：2018-10-08
+	描述：短信注册逻辑 
+ 	备注：缺少服务器api_user.php?act=sendmobileregister接口 
+-->
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div class="mui-input-row">
+			<input type="number" placeholder="请输入您的手机号" id="phone">
+			<input type="number" placeholder="请输入您的用户密码" id="passw">
+			<input type="text" placeholder="请输入短信验证码" id="u_code">
+			<a href="javascript:senmobile(60);" id="get_code" disabled="true">获取验证码</a>
+			<!--
+				这里的倒计时需要Ajax返回的数据确认用户注册信息无误才会计时
+				但是我没有服务器的接口设计，所以暂时没有测试
+				具体的接口描述在下面的注释
+            -->
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var issend = true;
+			//检查电话，密码的填写是否全部正确的状态
+			function senmobile(t)
+			//重复发送验证码功能，t参数代表了60，传入的时间
+			{
+				if(issend) {
+					var phoneObj = document.getElementById('phone');
+					var pw = document.getElementById('passw');
+					var get_code = document.getElementById('get_code');
+					
+					/*电话，密码验证*/
+					if(phoneObj.value != " ") {
+						//电话号不为空
+						var phoneVal = phoneObj.value;
+						var p1 = /^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/;
+						//模式匹配
+						var me = false;
+						//电话号码正误状态
+						if(p1.test(phoneVal)) me = true;
+						//test()检测一个字符串是否匹配某个模式		
+						if(!me) {
+							//密码格式不合法
+							phoneObj.value = '';
+							//输入的电话号码清空
+							mui.toast('请输入正确的手机号码');
+							phoneObj.focus();
+							//输入符
+							return false;
+						} else if(pw.length < 6) {
+							mui.toast('密码长度不够6');
+							return false;
+						} else {
+							plus.nativeUI.toast('如果你看这个，那么意味成功过的检验电话和密码，并且开始向服务器请求发送验证码', {
+								verticalAlign: 'center'
+							});
+							//数据检验通过
+							issend = false;
+							mui.ajax({
+								//Android JKD 也可以Ajax请求 
+								url: "api_user.php?act=sendmobileregister",
+								//API接口
+								dataType: "text",
+								type: "POST",
+								data: {
+									'mobile': phoneObj.value
+								},
+								success: function(data) {
+									if(data == '1') {
+										//如果返回值为1报错
+										plus.nativeUI.toast('用户已存在！', {
+											verticalAlign: 'center'
+										});
+										return false;
+									}
+									//服务器确认注册信息
+									var arr = data.split(",");
+									if(arr[1] == '0') {
+										plus.nativeUI.toast('验证码发送成功！', {
+											verticalAlign: 'center'
+										});
+									} else {
+										plus.nativeUI.toast('验证码发送失败！', {
+											verticalAlign: 'center'
+										});
+									}
+
+									for(i = 1; i <= t; i++) {
+										window.setTimeout("update_a(" + i + "," + t + ")", i * 1000);
+									}
+
+								}
+							});
+
+						}//Ajax操作结束
+					}
+					else 
+					//判断电话号码是否为空
+					{
+						plus.nativeUI.toast('手机号码不能为空！', {
+							verticalAlign: 'center'
+						});
+						return false;
+					}
+				}
+			}
+
+			function update_a(num, t) {
+				var get_code = document.getElementById('get_code');
+				if(num == t) {
+					get_code.innerHTML = " 重新发送 ";
+					issend = true;
+				} else {
+					var printnr = t - num;
+					get_code.innerHTML = printnr + " 秒后重发";
+				}
+			}
+		</script>
+	</body>
+</html>
