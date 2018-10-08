@@ -1,0 +1,771 @@
+{
+  "modules": [
+    {
+      "name": "App应用关系表",
+      "entities": [
+        {
+          "title": "STUDENT_INFO",
+          "fields": [
+            {
+              "name": "Age",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "年龄"
+            },
+            {
+              "name": "Name",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "姓名"
+            },
+            {
+              "name": "FamilyAddress",
+              "type": "MiddleString",
+              "remark": "",
+              "chnname": "家庭住址"
+            },
+            {
+              "name": "Phone",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "电话"
+            },
+            {
+              "name": "Stature",
+              "type": "Double",
+              "remark": "",
+              "chnname": "身高"
+            },
+            {
+              "name": "Weight",
+              "type": "Double",
+              "remark": "",
+              "chnname": "体重"
+            },
+            {
+              "name": "Department",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "学校"
+            },
+            {
+              "name": "Group",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "武术队"
+            },
+            {
+              "name": "Tuition",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "缴费信息"
+            }
+          ],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "学员信息表"
+        },
+        {
+          "title": "PARENTS_INFO",
+          "fields": [
+            {
+              "name": "Name",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "姓名"
+            },
+            {
+              "name": "Phone",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "电话"
+            }
+          ],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "家长信息表"
+        },
+        {
+          "title": "COACH_INFO",
+          "fields": [
+            {
+              "name": "Group",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "武术队"
+            },
+            {
+              "name": "Name",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "姓名"
+            },
+            {
+              "name": "Gender",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "性别"
+            },
+            {
+              "name": "Age",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "年龄"
+            }
+          ],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "老师信息表"
+        },
+        {
+          "title": "SIGNIN",
+          "fields": [
+            {
+              "name": "USER_ID",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "签到者"
+            },
+            {
+              "name": "Count",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "签到次数"
+            },
+            {
+              "name": "LastModifyTime",
+              "type": "DateTime",
+              "remark": "",
+              "chnname": "最后修改时间"
+            },
+            {
+              "name": "SignHistoy",
+              "type": "LongString",
+              "remark": "",
+              "chnname": "签到历史时间"
+            }
+          ],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "签到"
+        },
+        {
+          "title": "Message",
+          "fields": [
+            {
+              "name": "ID",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "消息ID"
+            },
+            {
+              "name": "Type",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "类型"
+            },
+            {
+              "name": "Time",
+              "type": "Date",
+              "remark": "",
+              "chnname": "时间"
+            },
+            {
+              "name": "Flag",
+              "type": "ShortString",
+              "remark": "",
+              "chnname": "标签"
+            },
+            {
+              "name": "User_ID",
+              "type": "Integer",
+              "remark": "",
+              "chnname": "用户"
+            }
+          ],
+          "headers": [
+            {
+              "fieldName": "chnname",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "name",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "type",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "remark",
+              "relationNoShow": true
+            },
+            {
+              "fieldName": "pk",
+              "relationNoShow": false
+            },
+            {
+              "fieldName": "relationNoShow",
+              "relationNoShow": true
+            }
+          ],
+          "chnname": "消息推送"
+        }
+      ],
+      "graphCanvas": {
+        "nodes": [
+          {
+            "shape": "table",
+            "title": "STUDENT_INFO",
+            "x": -375.9225598488339,
+            "y": -452.5763363773349,
+            "id": "74912295"
+          },
+          {
+            "shape": "table",
+            "title": "PARENTS_INFO",
+            "x": -410,
+            "y": -290,
+            "id": "6e4a7e44"
+          },
+          {
+            "shape": "table",
+            "title": "Message",
+            "x": -400,
+            "y": -170,
+            "id": "4c8856df"
+          },
+          {
+            "shape": "table",
+            "title": "COACH_INFO",
+            "x": -130,
+            "y": -500,
+            "id": "354f8ca4"
+          },
+          {
+            "shape": "table",
+            "title": "SIGNIN",
+            "x": -90,
+            "y": -360,
+            "id": "505f5505"
+          }
+        ],
+        "edges": []
+      },
+      "associations": []
+    }
+  ],
+  "dataTypeDomains": {
+    "datatype": [
+      {
+        "name": "默认字串",
+        "code": "DefaultString",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(32)"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(32)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(32)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "标识号",
+        "code": "IdOrKey",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "Oracle": {
+            "type": "VARCHAR2(32)"
+          },
+          "MySQL": {
+            "type": "VARCHAR(32)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "名称",
+        "code": "Name",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(128)"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(128)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "备注说明",
+        "code": "Intro",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(512)"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(512)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(512)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(512)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "字串-短",
+        "code": "ShortString",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(128)"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(128)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(128)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(128)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "字串-中",
+        "code": "MiddleString",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(1024)"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(1024)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1024)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(1024)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "字串-长",
+        "code": "LongString",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "Oracle": {
+            "type": "NVARCHAR2(3120)"
+          },
+          "MySQL": {
+            "type": "VARCHAR(3120)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(3120)"
+          },
+          "ORACLE": {
+            "type": "NVARCHAR2(3120)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "大文本",
+        "code": "LongText",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "TEXT"
+          },
+          "Oracle": {
+            "type": "CLOB"
+          },
+          "MYSQL": {
+            "type": "TEXT"
+          },
+          "ORACLE": {
+            "type": "CLOB"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "小数",
+        "code": "Double",
+        "apply": {
+          "Java": {
+            "type": "Double"
+          },
+          "MySQL": {
+            "type": "DECIMAL(64,16)"
+          },
+          "Oracle": {
+            "type": "NUMBER(64,16)"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(64,16)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(64,16)"
+          },
+          "JAVA": {
+            "type": "Double"
+          }
+        }
+      },
+      {
+        "name": "比例",
+        "code": "Ratio",
+        "apply": {
+          "MySQL": {
+            "type": "DECIMAL(2,2)"
+          },
+          "Java": {
+            "type": "Double"
+          },
+          "Oracle": {
+            "type": "NUMBER(2,2)"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(4,2)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(4,2)"
+          },
+          "JAVA": {
+            "type": "Double"
+          }
+        }
+      },
+      {
+        "name": "整数",
+        "code": "Integer",
+        "apply": {
+          "Java": {
+            "type": "Integer"
+          },
+          "MySQL": {
+            "type": "INT"
+          },
+          "Oracle": {
+            "type": "INT"
+          },
+          "MYSQL": {
+            "type": "INT"
+          },
+          "ORACLE": {
+            "type": "INT"
+          },
+          "JAVA": {
+            "type": "Integer"
+          }
+        }
+      },
+      {
+        "name": "金额",
+        "code": "Money",
+        "apply": {
+          "Java": {
+            "type": "Double"
+          },
+          "MySQL": {
+            "type": "DECIMAL(32,8)"
+          },
+          "Oracle": {
+            "type": "NUMBER(32,8)"
+          },
+          "MYSQL": {
+            "type": "DECIMAL(32,8)"
+          },
+          "ORACLE": {
+            "type": "NUMBER(32,8)"
+          },
+          "JAVA": {
+            "type": "Double"
+          }
+        }
+      },
+      {
+        "name": "是否",
+        "code": "YesNo",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(1)"
+          },
+          "Oracle": {
+            "type": "VARCHAR2(1)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(1)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(1)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "数据字典",
+        "code": "Dict",
+        "apply": {
+          "Java": {
+            "type": "String"
+          },
+          "MySQL": {
+            "type": "VARCHAR(32)"
+          },
+          "Oracle": {
+            "type": "VARCHAR2(32)"
+          },
+          "MYSQL": {
+            "type": "VARCHAR(32)"
+          },
+          "ORACLE": {
+            "type": "VARCHAR2(32)"
+          },
+          "JAVA": {
+            "type": "String"
+          }
+        }
+      },
+      {
+        "name": "日期",
+        "code": "Date",
+        "apply": {
+          "Java": {
+            "type": "Date"
+          },
+          "MySQL": {
+            "type": "Date"
+          },
+          "Oracle": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATE"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "JAVA": {
+            "type": "Date"
+          }
+        }
+      },
+      {
+        "name": "日期时间",
+        "code": "DateTime",
+        "apply": {
+          "Java": {
+            "type": "Date"
+          },
+          "MySQL": {
+            "type": "DateTime"
+          },
+          "Oracle": {
+            "type": "Date"
+          },
+          "MYSQL": {
+            "type": "DATETIME"
+          },
+          "ORACLE": {
+            "type": "DATE"
+          },
+          "JAVA": {
+            "type": "Date"
+          }
+        }
+      }
+    ],
+    "database": [
+      {
+        "code": "Java",
+        "fileShow": true,
+        "template": "package group.rober.pdman.{{=it.module.name}}.entity;\n$blankline\nimport javax.persistence.*;\nimport java.io.Serializable;\nimport java.util.Date;\n$blankline\n$blankline\n@Table(name=\"{{=it.entity.title}}\")\npublic class {{=it.func.camel(it.entity.title,true) }} implements Serializable,Cloneable{\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    {{? field.pk }}\n    @Id\n    @GeneratedValue\n    {{?}}\n    private {{=field.type}} {{=it.func.camel(field.name,false)}} ;\n{{~}}\n$blankline\n{{~it.entity.fields:field:index}}\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public {{=field.type}} get{{=it.func.camel(field.name,true)}}(){\n        return this.{{=it.func.camel(field.name,false)}};\n    }\n    /** {{=it.func.join(field.chnname,field.remark,';')}} */\n    public void set{{=it.func.camel(field.name,true)}}({{=field.type}} {{= it.func.camel(field.name,false) }}){\n        this.{{=it.func.camel(field.name,false)}} = {{= it.func.camel(field.name,false) }};\n    }\n{{~}}\n}"
+      },
+      {
+        "code": "MySQL",
+        "fileShow": true,
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}} {{= field.pk ? 'NOT NULL' : '' }} COMMENT '{{=it.func.join(field.chnname,field.remark,';')}}' {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n) COMMENT = '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}"
+      },
+      {
+        "code": "Oracle",
+        "fileShow": false,
+        "template": "DROP TABLE {{=it.entity.title}};\n$blankline\nCREATE TABLE {{=it.entity.title}}(\n{{ pkList = [] ; }}\n{{~it.entity.fields:field:index}}\n    {{? field.pk }}{{ pkList.push(field.name) }}{{?}}\n    {{=field.name}} {{=field.type}}  {{= field.pk ? 'NOT NULL' : '' }} {{= index < it.entity.fields.length-1 ? ',' : ( pkList.length>0 ? ',' :'' ) }}\n{{~}}\n{{? pkList.length >0 }}\n    PRIMARY KEY ({{~pkList:pkName:i}}{{= pkName }}{{= i<pkList.length-1 ? ',' : '' }}{{~}})\n{{?}}\n);\n$blankline\nCOMMENT ON TABLE '{{=it.func.join(it.entity.chnname,it.entity.remark,';') }}';\n{{~it.entity.fields:field:index}}\nCOMMENT ON COLUMN {{=it.entity.title}}.{{=field.name}} IS '{{=it.func.join(field.chnname,field.remark,';')}}';\n{{~}}"
+      },
+      {
+        "code": "DB2",
+        "fileShow": false
+      },
+      {
+        "code": "SQLLITE",
+        "fileShow": false
+      },
+      {
+        "code": "SQLSERVER",
+        "fileShow": false
+      }
+    ]
+  }
+}
