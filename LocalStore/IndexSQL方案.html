@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			//IndexDB方案
+			function openDB (name) {
+	            var request=window.indexedDB.open(name);
+	            request.onerror=function(e){
+	                console.log('OPen Error!');
+	            };
+	            request.onsuccess=function(e){
+	                myDB.db=e.target.result;
+	                alert("IndexDB connected success.")
+	            };
+        	}
+			function CheckConnect(name){
+				if(myDB != NULL){
+					alert("IndexDB connected success.")
+				}
+				else{
+					alert("Connect failure.")
+				}
+			}
+        	var myDB={
+	            name:'test',
+	            version:1,
+	            db:null
+        	};
+        	openDB(myDB.name);
+        	CheckConnect()
+		</script>
+	</body>
+
+</html>
