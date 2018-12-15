@@ -1,0 +1,2 @@
+#The Backend folder is used to make database. 
+Actually , there only on interface to connect server,but have two different way to builder server.php and nodejs

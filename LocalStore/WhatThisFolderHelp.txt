@@ -1,0 +1,1 @@
+There are many control to made a page , the control create some user data ,all the control data will save in a localdatabase , and then , there will a process to rebuild the localdatabase and then send to remote server to save.
