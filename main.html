@@ -4,6 +4,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script type="text/javascript">
+	        document.addEventListener('plusready', plusReady);
+	        function plusReady(){
+	            main();
+        }
+    </script>
 		<title></title>
 		<link href="css/mui.min.css" rel="stylesheet" />
 
@@ -37,7 +43,38 @@
 		<h1 class="mui-title">登录模板</h1>
 		<!--<button id='setting' class=" mui-pull-right mui-btn-link">设置</button>-->
 	</header>
-
+	
+	<video id="video" autoplay></video>
+	
+	<script>
+		function main()
+		{	
+	    var IntentMana = plus.android.importClass('android.content.Intent');
+	    var MediaStore = plus.android.importClass('android.provider.MediaStore');
+	    var App        = plus.android.runtimeMainActivity();
+	    var Uri        = plus.android.importClass('android.net.Uri');
+	    var FILE       = plus.android.importClass('java.io.File');
+	    var intent  = new IntentMana(MediaStore.ACTION_IMAGE_CAPTURE);
+	
+	    var vfile    = new FILE("/storage/emulated/0/my/test/img.jpg");
+	
+	    if(!vfile.exists())
+	    {
+	        var vDirPath = vfile.getParentFile(); //new File(vFile.getParent());
+	        vDirPath.mkdirs();
+	    }
+	    else{
+	        alert("文件存在!");
+	    }
+	
+	    var uri = Uri.fromFile(vfile);
+	    //
+	    intent.putExtra(MediaStore.EXTRA_OUTPUT, uri);//
+	    App.startActivityForResult(intent,100);
+	
+		}
+	</script>
+	
 	<!--底部的导航栏-->
 	<nav class="mui-bar mui-bar-tab">
 	    <a class="mui-tab-item mui-active" id="SchoolMessage" href="SchoolMessage.html">
