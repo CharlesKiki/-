@@ -1,21 +1,24 @@
 {
-  "main.html": {
-    "refer": [
-      "setting.html",
-      "1.html",
-      "SchoolMessage.html",
-      "Contacts.html",
-      "OtherFeatures.html"
-    ],
-    "resources": [
-      "1.html"
-    ]
-  },
-  "login.html": {
-    "refer": [
-      "main.html",
-      "reg.html",
-      "index.html"
-    ]
-  }
+	"main.html": {
+		"refer": [
+			"setting.html",
+			"1.html",
+			"SchoolMessage.html",
+			"Contacts.html",
+			"OtherFeatures.html",
+			"LearningTimer/index.html"
+		],
+		"resources": [
+			"1.html",
+			"LearningTimer/index.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"main.html",
+			"reg.html",
+			"index.html"
+		],
+		"resources": []
+	}
 }

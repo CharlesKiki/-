@@ -1,2 +1,0 @@
-I need to add some graph control.and make it enable to work on phone.
-Echart is Preperd to use.
